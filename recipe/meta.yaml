@@ -1,5 +1,5 @@
 {% set name = "nequip" %}
-{% set version = "0.5.4" %}
+{% set version = "0.5.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nequip-{{ version }}.tar.gz
-  sha256: 988473e85c6af1ea502bd0712326a48f33e6f9a695178dbaa5553d818c24ec28
+  sha256: 379bfe9f8906880251935f76ad959a343151f949438c49197fc30df11dee9394
 
 build:
   script: {{ PYTHON }} -m pip install . -vv

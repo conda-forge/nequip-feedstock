@@ -25,7 +25,7 @@ requirements:
     - python >3.7
     - pyyaml
     - scikit-learn <=1.0.1
-    - pytorch !=1.9.0,<=1.12,>=1.8
+    - pytorch >=1.13
     - torch-ema >=0.3.0
     - torch-runstats >=0.2.0
     - tqdm

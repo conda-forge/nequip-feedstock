@@ -10,32 +10,39 @@ source:
   sha256: f805a29fb0631f1134cd19027055f726c5e50e531cc46bd1a872bda91378edb2
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
+  entry_points:
+    - nequip-train = nequip.scripts.train:main
+    - nequip-evaluate = nequip.scripts.evaluate:main
+    - nequip-benchmark = nequip.scripts.benchmark:main
+    - nequip-deploy = nequip.scripts.deploy:main
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
   noarch: python
 
 requirements:
   host:
+    - python >=3.8
     - pip
-    - python >3.7
   run:
-    - ase
-    - e3nn <0.5.0,>=0.3.5
+    - python >=3.8
     - numpy
-    - python >3.7
-    - pyyaml
-    - scikit-learn <=1.0.1
-    - pytorch >=1.13
-    - torch-ema >=0.3.0
-    - torch-runstats >=0.2.0
+    - ase
     - tqdm
-    - typing-extensions
+    - e3nn >=0.4.4,<0.6.0
+    - pyyaml
+    - importlib-metadata
+    - torch-runstats >=0.2.0
+    - torch-ema >=0.3.0
 
 test:
   imports:
     - nequip
   commands:
     - pip check
+    - nequip-train --help
+    - nequip-evaluate --help
+    - nequip-benchmark --help
+    - nequip-deploy --help
   requires:
     - pip
 

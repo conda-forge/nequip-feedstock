@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/nequip-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nequip-{{ version }}.tar.gz
   sha256: f805a29fb0631f1134cd19027055f726c5e50e531cc46bd1a872bda91378edb2
 
 build:
@@ -16,15 +16,15 @@ build:
     - nequip-benchmark = nequip.scripts.benchmark:main
     - nequip-deploy = nequip.scripts.deploy:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - numpy
     - ase
     - tqdm
@@ -45,6 +45,7 @@ test:
     - nequip-deploy --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/mir-group/nequip

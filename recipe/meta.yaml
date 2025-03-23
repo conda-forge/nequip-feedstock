@@ -1,5 +1,5 @@
 {% set name = "nequip" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nequip-{{ version }}.tar.gz
-  sha256: f805a29fb0631f1134cd19027055f726c5e50e531cc46bd1a872bda91378edb2
+  sha256: 8e4261fc8440948a3f9204fe668171f155211fddbb9b7df6062b04abea7dd3da
 
 build:
   entry_points:
@@ -16,7 +16,7 @@ build:
     - nequip-benchmark = nequip.scripts.benchmark:main
     - nequip-deploy = nequip.scripts.deploy:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
@@ -25,6 +25,7 @@ requirements:
     - pip
     - setuptools
   run:
+    - typing_extensions
     - python >={{ python_min }}
     - numpy
     - ase

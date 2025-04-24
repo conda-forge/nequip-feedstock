@@ -1,5 +1,5 @@
 {% set name = "nequip" %}
-{% set version = "0.6.2" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nequip-{{ version }}.tar.gz
-  sha256: 8e4261fc8440948a3f9204fe668171f155211fddbb9b7df6062b04abea7dd3da
+  sha256: a0ffbef630d6df405a4e14d9eecbfba3a9887f08d1814978a5d19273dbaf71db
 
 build:
   entry_points:
@@ -25,12 +25,19 @@ requirements:
     - pip
     - setuptools
   run:
+    - hydra-core
+    - lightning
+    - lmdb
+    - python-lmdb 
+    - matscipy
+    - pytorch >=2.2.0
+    - torchmetrics >=1.6.0
     - typing_extensions
     - python >={{ python_min }}
     - numpy
     - ase
     - tqdm
-    - e3nn >=0.4.4,<0.6.0
+    - e3nn >=0.5.6,<0.6.0
     - pyyaml
     - importlib-metadata
     - torch-runstats >=0.2.0
@@ -41,10 +48,6 @@ test:
     - nequip
   commands:
     - pip check
-    - nequip-train --help
-    - nequip-evaluate --help
-    - nequip-benchmark --help
-    - nequip-deploy --help
   requires:
     - pip
     - python {{ python_min }}

@@ -28,6 +28,7 @@ requirements:
     - hydra-core
     - lightning
     - lmdb
+    - python-lmdb 
     - matscipy
     - pytorch >=2.2.0
     - torchmetrics >=1.6.0

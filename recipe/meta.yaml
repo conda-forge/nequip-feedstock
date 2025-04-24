@@ -48,10 +48,6 @@ test:
     - nequip
   commands:
     - pip check
-    - nequip-train --help
-    - nequip-evaluate --help
-    - nequip-benchmark --help
-    - nequip-deploy --help
   requires:
     - pip
     - python {{ python_min }}

@@ -1,5 +1,5 @@
 {% set name = "nequip" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nequip-{{ version }}.tar.gz
-  sha256: a0ffbef630d6df405a4e14d9eecbfba3a9887f08d1814978a5d19273dbaf71db
+  sha256: 4d9f341a3ee7c75c8669161492005255fa643183da8e72e9b81907925a11ff2c
 
 build:
   entry_points:
@@ -28,7 +28,7 @@ requirements:
     - hydra-core
     - lightning
     - lmdb
-    - python-lmdb 
+    - python-lmdb
     - matscipy
     - pytorch >=2.2.0
     - torchmetrics >=1.6.0

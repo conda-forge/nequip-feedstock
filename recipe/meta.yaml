@@ -1,5 +1,5 @@
 {% set name = "nequip" %}
-{% set version = "0.11.0" %}
+{% set version = "0.11.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nequip-{{ version }}.tar.gz
-  sha256: c9c2305196c97f851ddb0206715d0e2de26c9c8c0c74afb0139317ba8273595a
+  sha256: 7c1c02e3b6b4c3ef2143f35a06f4e79e80297589f4285ea1f04e72804f113fde
 
 build:
   entry_points:

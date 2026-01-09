@@ -1,5 +1,5 @@
 {% set name = "nequip" %}
-{% set version = "0.16.1" %}
+{% set version = "0.16.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nequip-{{ version }}.tar.gz
-  sha256: 5e6fb634dfd83211ace8b87cd6626cdb477493e6f8e494129131825962eea187
+  sha256: 4449ebbd0c1fe8b9533636ba915608fdd07a00a07f9e860e1f4a6c7f7bf4b0f1
 
 build:
   entry_points:
@@ -39,7 +39,7 @@ requirements:
     - numpy
     - ase
     - tqdm
-    - e3nn >=0.5.6,<0.6.0
+    - e3nn >=0.5.9,<0.6.0
     - pyyaml
     - importlib-metadata
     - torch-runstats >=0.2.0

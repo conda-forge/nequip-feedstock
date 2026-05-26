@@ -1,5 +1,5 @@
 {% set name = "nequip" %}
-{% set version = "0.17.1" %}
+{% set version = "0.18.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/nequip-{{ version }}.tar.gz
-  sha256: 0b2097db8892cde31114673a68382a111f5b14224e3f67420ca17c41abc2eef3
+  sha256: dcf9e2e29fd4773dd4d4ccce6ff9a3bdd1a2fc2280ce983eea4497d35cbdb9ca
 
 build:
   entry_points:
@@ -28,7 +28,7 @@ requirements:
   run:
     - requests
     - hydra-core
-    - lightning
+    - lightning >=2.0,!=2.6.2,!=2.6.3
     - lmdb
     - python-lmdb
     - matscipy
